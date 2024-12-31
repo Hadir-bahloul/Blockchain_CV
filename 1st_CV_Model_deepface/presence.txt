@@ -1,0 +1,4 @@
+yellow: in out in out in 
+girl: in out out out
+hadir:in out in in
+samet: in 

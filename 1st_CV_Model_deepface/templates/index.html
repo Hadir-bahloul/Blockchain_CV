@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Detection Image Capture</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Face Detection Image Capture</h1>
+    <p>Click the button below to start the image capture process based on face detection.</p>
+    
+    <button id="start-button" onclick="startCapture()">Start Capture</button>
+    
+    <script>
+        function startCapture() {
+            fetch('/start_capture', { method: 'POST' })
+                .then(response => response.text())
+                .then(data => {
+                    alert(data);  // Show success message
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                    alert("There was an error starting the capture process.");
+                });
+        }
+    </script>
+</body>
+</html>
